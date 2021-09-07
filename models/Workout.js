@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const exerciseSchema = new Schema({
+const workoutSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -32,9 +32,9 @@ const exerciseSchema = new Schema({
   
 });
 
-const Exercise = mongoose.model("Exercise", exerciseSchema);
+const Workout = mongoose.model("Workout", workoutSchema);
 
-module.exports = Exercise;
+module.exports = Workout;
 // I should also be able to track the name, 
 // type, weight, sets, reps, and duration of exercise.
 //  If the exercise is a cardio exercise, I should be able 
