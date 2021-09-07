@@ -26,15 +26,52 @@ app.get("/stats", (req, res) => {
 	res.sendFile(path.join(__dirname, "./public/stats.html"));
 });
 
+//getLastWorkout
 app.get("/api/workouts",function(req,res){  
-    Workout.find()
-    .then(data =>{  
-        res.json(data)
+    db.Workout.find()
+    .then(dbWorkout =>{  
+        res.json(dbWorkout)
     })
     .catch(err => { 
         res.json(err)
     })
 });
+
+//addExercise
+app.put("/api/workouts/:id",function(req,res){  
+    db.Workout.create(body)
+    .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { workout: _id } }, { new: true }))
+    .then(dbExercise => {
+      res.json(dbExercise);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+//createWorkout
+app.post("/api/workouts/",function(req,res){  
+    db.Workout.create()
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
+
+//getWorkoutsInRange
+app.get("/api/workouts/range",function(req,res){  
+    db.Workout.find()
+    .then(dbWorkout =>{  
+        res.json(dbWorkout)
+    })
+    .catch(err => { 
+        res.json(err)
+    })
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
