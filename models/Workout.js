@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const workoutSchema = new Schema({
+const WorkoutSchema = new Schema({
   name: {
     type: String,
     trim: true,
@@ -15,24 +15,20 @@ const workoutSchema = new Schema({
   },
   weight: {
     type: Number,
-    required: "Enter an amount",
   },
   sets: {
     type: Number,
-    required: "Enter an amount",
   },
   reps: {
     type: Number,
-    required: "Enter an amount",
   },
   duration: {
     type: Number,
-    required: "Enter an amount",
   },
   
 });
 
-const Workout = mongoose.model("Workout", workoutSchema);
+const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
 // I should also be able to track the name, 
