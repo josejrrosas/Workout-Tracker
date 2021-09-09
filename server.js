@@ -51,7 +51,7 @@ app.put("/api/workouts/:id",(req,res)=>{
 
 // createWorkout
 app.post("/api/workouts", (req, res) => {
-  db.Workout.create({})
+  db.Workout.create()
   .then((dbWorkout => {res.json(dbWorkout);}))
   .catch(err => {
     res.json(err);
@@ -60,7 +60,7 @@ app.post("/api/workouts", (req, res) => {
 
 //getWorkoutsInRange
 app.get("/api/workouts/range",function(req,res){  
-    db.Workout.find({}).limit(7)
+    db.Workout.find({})
     .then(dbWorkout =>{  
         res.json(dbWorkout)
     })
