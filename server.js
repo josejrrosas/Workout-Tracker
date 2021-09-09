@@ -6,7 +6,6 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 const db = require("./models");
-const { appendFile } = require("fs");
 
 const app = express();
 
@@ -15,7 +14,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trackerdb", { useNewUrlParser: true });
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/Workouts',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 app.get("/exercise", (req, res) => {
 	res.sendFile(path.join(__dirname, "./public/exercise.html"));
