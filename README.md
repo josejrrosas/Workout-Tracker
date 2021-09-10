@@ -14,11 +14,11 @@ Fitness Tracker application to track the distance, duration, and exercises of a 
 * [Questions](#questions)
 
 # Deployed Website: 
-[Fitness Tracker](https://gauri-fitness-tracker.herokuapp.com/)
+[Workout Tracker](https://arcane-oasis-18047.herokuapp.com/)
 
 # Screenshot :
 
-|![Fitness Tracker](public/images/FitnessTracker.png)|![Fitness Tracker Dashboard](public/images/FitnessTrackerDashboard.png)
+|![Fitness Tracker](public/images/screenshot.png)|![Fitness Tracker Dashboard](public/images/tracker.png)
 
 
 # User Story
